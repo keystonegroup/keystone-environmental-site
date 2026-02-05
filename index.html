@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,11 +12,7 @@
 <body>
 
   <main>
-    <img
-      src="assets/logo.png"
-      alt="Keystone Environmental Logo"
-      class="logo"
-    />
+    <img src="assets/logo.png" alt="Keystone Environmental Logo" class="logo" />
   </main>
 
   <div id="footer"></div>
@@ -23,8 +20,13 @@
   <script>
     fetch('assets/footer.html')
       .then(r => r.text())
-      .then(html => document.getElementById('footer').innerHTML = html);
+      .then(html => {
+        document.getElementById('footer').innerHTML = html;
+        document.getElementById('currentYear').textContent =
+          new Date().getFullYear();
+      });
   </script>
 
 </body>
+
 </html>
